@@ -1,0 +1,7 @@
+{
+  "name": "IonicFitnessApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

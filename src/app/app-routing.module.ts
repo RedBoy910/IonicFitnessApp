@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'workout-tab',
+    loadChildren: () => import('./workout-tab/workout-tab.module').then( m => m.WorkoutTabPageModule)
+  },
+  {
+    path: 'friends-tab',
+    loadChildren: () => import('./friends-tab/friends-tab.module').then( m => m.FriendsTabPageModule)
+  },
+  {
+    path: 'profile-tab',
+    loadChildren: () => import('./profile-tab/profile-tab.module').then( m => m.ProfileTabPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>workoutTab</ion-title>
+    <ion-title>
+      Logo
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment scrollable mode="md" [(ngModel)]="currentSegment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button class = "topSegment" value="0">
+        <ion-label>Status</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class = "topSegment" value="1">
+        <ion-label>Walking</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class = "topSegment" value="2">
+        <ion-label>Running</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class = "topSegment" value="3">
+        <ion-label>Cycling</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-slides #slides [options]="slideOptions" (ionSlideDidChange)="slideChanged(slides)" (ionSlideDidLoad)="slideChanged(slides)">
+    <ion-slide>
+      1
+    </ion-slide>
+    <ion-slide>
+      2
+    </ion-slide>
+    <ion-slide>
+      3
+    </ion-slide>
+    <ion-slide>
+      4
+    </ion-slide>
+  </ion-slides>
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlide, IonSlides } from '@ionic/angular';
 
 @Component({
@@ -6,27 +6,27 @@ import { IonSlide, IonSlides } from '@ionic/angular';
   templateUrl: './workout-tab.page.html',
   styleUrls: ['./workout-tab.page.scss'],
 })
-export class WorkoutTabPage implements OnInit {
-  currentSegment = 0;
-  currentSlide: IonSlides;
-  slideOptions = {
-    initialSlide: 0,
-    slidesPerView: 1,
-    speed: 400
+export class WorkoutTabPage implements OnInit {  
+  private segmentList: Array<string> = ["Status", "Walking", "Running", "Cycling"];
+  private slideList: Array<string> = ["1", "2", "3", "4"];
+  private selectedSegment: string;
+
+  @ViewChild('slide') slide: IonSlides;
+
+  constructor() {
+    this.selectedSegment = this.segmentList[0];
+   }
+
+  slideChanged(ev) {
+    this.slide.getActiveIndex().then((index) => {
+      console.log(index);
+      this.selectedSegment = this.segmentList[index];
+    })
   }
 
-  constructor() { }
-
-  async segmentChanged(ev){
-    await this.currentSlide.slideTo(this.currentSegment);
-  }
-
-  async slideChanged(slide: IonSlides){
-    this.currentSlide = slide;
-    slide.getActiveIndex().then((index) => {
-        this.currentSegment = index;
-        console.log("slide");
-     });
+  segmentSelected(item: string, index: number) {
+    console.log(item, index);
+    this.slide.slideTo(index);
   }
 
   ngOnInit() {

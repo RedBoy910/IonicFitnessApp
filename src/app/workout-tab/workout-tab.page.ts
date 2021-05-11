@@ -8,7 +8,6 @@ import { IonSlide, IonSlides } from '@ionic/angular';
 })
 export class WorkoutTabPage implements OnInit {  
   private segmentList: Array<string> = ["Status", "Walking", "Running", "Cycling"];
-  private slideList: Array<string> = ["1", "2", "3", "4"];
   private selectedSegment: string;
 
   @ViewChild('slide') slide: IonSlides;

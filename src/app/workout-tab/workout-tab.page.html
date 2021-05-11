@@ -1,12 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Logo
-    </ion-title>
+  <ion-toolbar #logoToolbar class="ion-text-center">
+    <img #logo
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/601px-Xiaomi_logo_%282021-%29.svg.png"
+      width="40" height="40">
   </ion-toolbar>
-  <ion-toolbar class="toolbar">
+  <ion-toolbar>
     <ion-segment scrollable [(ngModel)]="selectedSegment">
-      <ion-segment-button class="topSegment" *ngFor="let item of segmentList; let i = index" [value]="item" (click)="segmentSelected(item, i)">
+      <ion-segment-button class="topSegments" *ngFor="let item of segmentList; let i = index" [value]="item"
+        (click)="segmentSelected(item, i)">
         <ion-label>{{item}}</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -15,8 +16,364 @@
 
 <ion-content>
   <ion-slides #slide (ionSlideDidChange)="slideChanged($event)">
-    <ion-slide *ngFor="let item of slideList">
-      {{item}}
+
+    <ion-slide id="slide1">
+      <ion-list>
+      <ion-card>
+        <ion-list>
+
+          <ion-item>
+
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <h1>7231</h1>
+                  <p>Still need 2769 steps to reach the goal</p>
+                </ion-col>
+                <ion-col id="stepsIconContainer">
+                  <ion-icon id="stepsIcon" name="accessibility-outline"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+
+          <ion-item>
+            <ion-list lines="none">
+
+              <ion-item>
+                <ion-icon slot="start" name="moon-outline"></ion-icon>
+                <ion-grid>
+                  <ion-row>
+                    <ion-label class="firstStats">Slept 8 h 12 m last night</ion-label>
+                  </ion-row>
+                  <ion-row>
+                    <ion-note class="secondStats">Deep sleep 3 h 48 m , light sleep 4 h 24 m</ion-note>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon slot="start" name="fitness-outline"></ion-icon>
+                <ion-grid>
+                  <ion-row>
+                    <ion-label class="firstStats">Heart rate: 60 BPM</ion-label>
+                  </ion-row>
+                  <ion-row>
+                    <ion-note class="secondStats">05/06 17:58</ion-note>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon slot="start" name="scale-outline"></ion-icon>
+                <ion-grid>
+                  <ion-row>
+                    <ion-label class="firstStats">Weight: 78.2kg</ion-label>
+                  </ion-row>
+                  <ion-row>
+                    <ion-note class="secondStats">05/04 9:01</ion-note>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+
+            </ion-list>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="viewMore ion-text-center">View more</ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-card>
+
+      <ion-card>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-label id="distanceLabel" slot="end"><b>1.54</b> km</ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-label class="firstStats">Outdoor running</ion-label>
+              </ion-row>
+              <ion-row>
+                <ion-note class="secondStats">11/11 20:55</ion-note>
+              </ion-row>
+              <ion-row>
+                <ion-note class="secondStats">Workout time <b>00:40:21</b> Avg pace <b>05'56''</b></ion-note>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="viewMore ion-text-center">View more</ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-card>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list>
+        <ion-card>
+          <ion-list>
+  
+            <ion-item>
+  
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <h1>7231</h1>
+                    <p>Still need 2769 steps to reach the goal</p>
+                  </ion-col>
+                  <ion-col id="stepsIconContainer">
+                    <ion-col id="stepsIconContainer">
+                      <ion-icon id="stepsIcon" name="footsteps-outline"></ion-icon>
+                    </ion-col>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+  
+            </ion-item>
+  
+            <ion-item>
+              <ion-list lines="none">
+  
+                <ion-item>
+                  <ion-icon slot="start" name="flame-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Burned 110 kcal</ion-label>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+                <ion-item>
+                  <ion-icon slot="start" name="medal-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Longest walk: 4 km</ion-label>
+                    </ion-row>
+                    <ion-row>
+                      <ion-note class="secondStats">05/06 17:58</ion-note>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+              </ion-list>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+  
+        <ion-card>
+  
+          <ion-list>
+  
+            <ion-item>
+              <ion-label id="distanceLabel" slot="end"><b>12.5</b> km</ion-label>
+              <ion-grid>
+                <ion-row>
+                  <ion-label class="firstStats">Weekly total</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="secondStats">Total time <b>03:21:40</b> Avg pace <b>03'43''</b></ion-note>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+        </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list>
+        <ion-card>
+          <ion-list>
+  
+            <ion-item>
+  
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <h1>20 km</h1>
+                    <p>5 km to reach the goal</p>
+                  </ion-col>
+                  <ion-col id="stepsIconContainer">
+                    <ion-col id="stepsIconContainer">
+                      <ion-icon id="stepsIcon" name="walk-outline"></ion-icon>
+                    </ion-col>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+  
+            </ion-item>
+  
+            <ion-item>
+              <ion-list lines="none">
+  
+                <ion-item>
+                  <ion-icon slot="start" name="flame-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Burned 500 kcal</ion-label>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+                <ion-item>
+                  <ion-icon slot="start" name="flash-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Top speed: 12 km/h</ion-label>
+                    </ion-row>
+                    <ion-row>
+                      <ion-note class="secondStats">05/06 17:58</ion-note>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+              </ion-list>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+  
+        <ion-card>
+  
+          <ion-list>
+  
+            <ion-item>
+              <ion-label id="distanceLabel" slot="end"><b>5</b> laps</ion-label>
+              <ion-grid>
+                <ion-row>
+                  <ion-label class="firstStats">Daily sprint goal</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="secondStats">Laps so far: <b>3</b> Avg pace <b>02'01''</b></ion-note>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+        </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-card>
+          <ion-list>
+  
+            <ion-item>
+  
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <h1>100 km</h1>
+                    <p><b>WEEKLY GOAL REACHED!</b></p>
+                  </ion-col>
+                  <ion-col id="stepsIconContainer">
+                    <ion-icon id="stepsIcon" name="bicycle-outline"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+  
+            </ion-item>
+  
+            <ion-item>
+              <ion-list lines="none">
+  
+                <ion-item>
+                  <ion-icon slot="start" name="arrow-up-circle-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Climbed to 3rd place in the local leaderboard</ion-label>
+                    </ion-row>
+                    <ion-row>
+                      <ion-note class="secondStats">You are 25 km away from the 2nd place</ion-note>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+                <ion-item>
+                  <ion-icon slot="start" name="fitness-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Heart rate: 70 BPM</ion-label>
+                    </ion-row>
+                    <ion-row>
+                      <ion-note class="secondStats">05/06 17:58</ion-note>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+                <ion-item>
+                  <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-label class="firstStats">Average performance increased by 15%</ion-label>
+                    </ion-row>
+                    <ion-row>
+                      <ion-note class="secondStats">04/06 10:22</ion-note>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+  
+              </ion-list>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+  
+        <ion-card>
+  
+          <ion-list>
+  
+            <ion-item>
+              <ion-label id="distanceLabel" slot="end"><b>150</b> km</ion-label>
+              <ion-grid>
+                <ion-row>
+                  <ion-label class="firstStats">Long distance race</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="secondStats">12/13 10:25</ion-note>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="secondStats">Workout time <b>03:20:21</b> Avg pace <b>05'56''</b></ion-note>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label class="viewMore ion-text-center">View more</ion-label>
+            </ion-item>
+  
+          </ion-list>
+        </ion-card>
+        </ion-list>
     </ion-slide>
   </ion-slides>
 </ion-content>

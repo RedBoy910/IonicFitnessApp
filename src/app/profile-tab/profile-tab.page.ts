@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-tab.page.scss'],
 })
 export class ProfileTabPage implements OnInit {
+  public username = "Person Persony";
+  public email = "adress@email.com"
 
   constructor() { }
 

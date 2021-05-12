@@ -1,9 +1,28 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profileTab</ion-title>
+  <ion-toolbar #logoToolbar class="ion-text-center">
+    <img #logo
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/601px-Xiaomi_logo_%282021-%29.svg.png"
+      width="40" height="40">
+  </ion-toolbar>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-avatar>
+      <img id="profilePicture" src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png">
+    </ion-avatar>
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          Username: {{username}}
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          Email: {{email}}
+        </ion-item>
+      </ion-list>
+    </ion-card>
 </ion-content>
